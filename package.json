@@ -1,0 +1,26 @@
+{
+  "name": "boom-scripts",
+  "version": "1.0.0",
+  "description": "Shared configuration scripts for boomsourcing javascript developers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "boom-scripts": "./bin/index.js"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./config/eslint"
+    ]
+  },
+  "prettier": "./config/prettier/index.js",
+  "author": "Aodhan Hayter <aodhan.hayter@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^6.7.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-react": "^7.17.0",
+    "prettier": "1.19.1"
+  }
+}
