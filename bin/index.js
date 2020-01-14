@@ -2,9 +2,9 @@
 
 const path = require('path')
 const fs = require('fs')
-const { spawnSync }= require('child_process')
+const { spawnSync } = require('child_process')
 
-const [ executor, ignoredBin, command ] = process.argv
+const [executor, ignoredBin, command] = process.argv
 
 if (command) {
   spawnScript()
@@ -16,8 +16,7 @@ if (command) {
 function spawnScript() {
   const args = process.argv.slice(2)
   const commandIndex = args.findIndex(
-    command =>
-      command === 'init'
+    command => command === 'init' || command === 'format' || command === 'lint'
   )
 
   const buildCommand = commandIndex === -1 ? null : args[commandIndex]
@@ -31,13 +30,9 @@ function spawnScript() {
 
   const commandPath = path.join(__dirname, './commands', buildCommand)
 
-  const spawnProc= spawnSync(
-    executor,
-    [commandPath].concat(commandArgs),
-    {
-      stdio: 'inherit'
-    }
-  )
+  const spawnProc = spawnSync(executor, [commandPath].concat(commandArgs), {
+    stdio: 'inherit',
+  })
 
   if (spawnProc.signal) {
     console.error('This process was interrupted by a signal, exiting early')
@@ -49,9 +44,10 @@ function spawnScript() {
 
 function printAvailableCommands() {
   const scriptsPath = path.join(__dirname, 'commands/')
-  const availableCommands = fs.readdirSync(scriptsPath)
+  const availableCommands = fs
+    .readdirSync(scriptsPath)
     .map(script => path.parse(script).name)
-    .join('\n')
+    .join(' \n')
     .trim()
 
   const fullMessage = `

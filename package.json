@@ -11,15 +11,25 @@
   },
   "eslintConfig": {
     "extends": [
-      "./config/eslint"
+      "./eslint.js"
     ]
   },
+  "eslintIgnore": [
+    "node_modules",
+    "coverage",
+    "dist"
+  ],
   "prettier": "./config/prettier/index.js",
   "author": "Aodhan Hayter <aodhan.hayter@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "eslint": "^6.7.1",
     "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-react": "^7.17.0",
+    "prettier": "1.19.1"
+  },
+  "peerDependencies": {
+    "eslint": "^6.7.1",
     "eslint-plugin-react": "^7.17.0",
     "prettier": "1.19.1"
   }
