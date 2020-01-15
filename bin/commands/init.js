@@ -6,8 +6,6 @@ const { spawnSync } = require('child_process')
 
 const scriptPackageJSON = require('../../package.json')
 
-const [executor, ignoredBin, ...options] = process.argv
-
 checkAndInstallPeerDeps(scriptPackageJSON.peerDependencies)
 
 let packageJSON = getPackageJSON()
@@ -29,7 +27,7 @@ function addNpmScripts(pJSON) {
 }
 
 function addEslintConfig(pJSON) {
-  const configPath = './node_modules/boom-scripts/eslint.js'
+  const configPath = './node_modules/boom-scripts/config/eslint/index.js'
 
   if (pJSON.eslintConfig) {
     extendEslintConfig(configPath, pJSON.eslintConfig)

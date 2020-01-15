@@ -47,17 +47,13 @@ function printAvailableCommands() {
   const availableCommands = fs
     .readdirSync(scriptsPath)
     .map(script => path.parse(script).name)
-    .join(' \n')
-    .trim()
+    .join('\n')
 
   const fullMessage = `
-  Usage: ${ignoredBin} [command] [--flags]
+Usage: ${ignoredBin} [command] [--flags]
 
-  Available Commands:
-    ${availableCommands}
-
-  Options:
-    All options depend on the command. But args you pass will be forwarded to the respective command.
-  `.trim()
+Available Commands:
+${availableCommands}
+`
   console.error(`\n${fullMessage}\n`)
 }
