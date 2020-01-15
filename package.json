@@ -1,11 +1,10 @@
 {
   "name": "boom-scripts",
   "version": "1.0.0",
-  "description": "Shared configuration scripts for boomsourcing javascript developers",
+  "description": "Shared configuration scripts for Boomsourcing javascript developers",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
     "boom-scripts": "./bin/index.js"
