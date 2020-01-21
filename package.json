@@ -1,6 +1,6 @@
 {
   "name": "boom-scripts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shared configuration scripts for Boomsourcing javascript developers",
   "main": "index.js",
   "scripts": {
