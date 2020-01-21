@@ -4,4 +4,6 @@ dist/
 build/
 out/
 .next/
+.cache/
+public/
 package-lock.json
